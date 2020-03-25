@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:GazeNote;assembly=GazeNote"
+             x:Class="GazeNote.Pages.AddOrEditNotePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout
+                Orientation="Horizontal"
+                HeightRequest="64">
+                <ImageButton 
+                    x:Name="BackButton"
+                    Source="{local:ImageResource GazeNote.icons.back.png}"
+                    HorizontalOptions="Start"
+                    Clicked="BackButton_Clicked"/>
+                <ImageButton
+                    x:Name="SaveButton"
+                    Source="{local:ImageResource GazeNote.icons.save.png}"
+                    HorizontalOptions="Fill"
+                    Clicked="SaveButton_Clicked"/>
+                <ImageButton 
+                    x:Name="DeleteButton"
+                    Source="{local:ImageResource GazeNote.icons.delete.png}"
+                    HorizontalOptions="Fill"
+                    Clicked="DeleteButton_Clicked"/>
+            </StackLayout>
+            <Frame 
+                Margin="20"
+                BorderColor="Black"
+                HasShadow="True"
+                CornerRadius="0.5"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                HeightRequest="250"
+                WidthRequest="350">
+                <StackLayout
+                    x:Name="MainContainer"
+                    Orientation="Vertical"
+                    Padding="10">
+                    <Entry 
+                        x:Name="NameEntry"
+                        Placeholder="Tytuł notatki"
+                        Text="{Binding Name, Mode=TwoWay}"
+                        VerticalOptions="Start"/>
+                    <Entry
+                        x:Name="TagEntry"
+                        Placeholder="Wpisz tutaj tagi"
+                        VerticalOptions="Fill"
+                        Completed="TagEntry_Completed"/>
+                    <StackLayout
+                        x:Name="TagContainer"
+                        Orientation="Horizontal"
+                        HeightRequest="48"
+                        VerticalOptions="Center"
+                        BackgroundColor="#d4d7dd">
+                    </StackLayout>
+                    <Editor 
+                        x:Name="ContentEditor"
+                        Placeholder="Treść notatki" 
+                        Text="{Binding Content, Mode=TwoWay}"
+                        VerticalOptions="FillAndExpand"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

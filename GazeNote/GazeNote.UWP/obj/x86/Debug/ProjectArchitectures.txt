@@ -1,0 +1,1 @@
+C:\Users\Kamila\Documents\My Repositories\Visual Studio Projects\Projects\GazeNote\GazeNote\GazeNote.UWP\GazeNote.UWP.csproj;x86

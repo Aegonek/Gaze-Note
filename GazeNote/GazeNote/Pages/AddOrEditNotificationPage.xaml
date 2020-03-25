@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dt="clr-namespace:System;assembly=netstandard"
+             xmlns:local="clr-namespace:GazeNote;assembly=GazeNote"
+             x:Class="GazeNote.Pages.AddOrEditNotificationPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout 
+                Orientation="Horizontal"
+                HeightRequest="64">
+                <ImageButton 
+                    x:Name="BackButton"
+                    Source="{local:ImageResource GazeNote.icons.back.png}"
+                    HorizontalOptions="Start"
+                    Clicked="BackButton_Clicked"/>
+                <ImageButton
+                    x:Name="SaveButton"
+                    Source="{local:ImageResource GazeNote.icons.save.png}"
+                    HorizontalOptions="Fill"
+                    Clicked="SaveButton_Clicked"/>
+                <ImageButton 
+                    x:Name="DeleteButton"
+                    Source="{local:ImageResource GazeNote.icons.delete.png}"
+                    HorizontalOptions="Fill"
+                    Clicked="DeleteButton_Clicked"/>
+            </StackLayout>
+            <Entry
+                x:Name="NotificationEntry"
+                Placeholder="Enter notification here"/>
+            <DatePicker 
+                MinimumDate="01-01-1970"
+                MaximumDate="12-31-2040"
+                Date="{Static dt:DateTime.Now}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

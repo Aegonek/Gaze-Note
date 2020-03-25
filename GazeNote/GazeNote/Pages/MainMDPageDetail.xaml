@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:GazeNote"
+             x:Class="GazeNote.Pages.MainMDPageDetail">
+  <StackLayout>
+        <AbsoluteLayout>
+            <StackLayout
+                AbsoluteLayout.LayoutBounds=".0,.0,1.0,1.0"
+                AbsoluteLayout.LayoutFlags="All">
+                <ListView 
+                    x:Name="NoteListListView"
+                    ItemsSource="{Binding NoteList, Mode=TwoWay}"
+                    ItemSelected="NoteListListView_ItemSelected"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    BackgroundColor="#f6f6f6">
+                    <ListView.Header>
+                        <Label
+                            BackgroundColor="#eae9e9"
+                            Text="Wszystkie notatki"
+                            FontSize="24"
+                            VerticalTextAlignment="Center"
+                            HorizontalTextAlignment="Center"
+                            HeightRequest="60"/>
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding Name}"
+                                    Detail="{Binding Content}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <ImageButton x:Name="NoteButton"
+                AbsoluteLayout.LayoutBounds="0.85, 0.85, 0.1, 0.1"
+                AbsoluteLayout.LayoutFlags="All"
+                Source="{local:ImageResource GazeNote.icons.note.png}"
+                Clicked="NoteButton_Clicked"/>
+        </AbsoluteLayout>
+    </StackLayout>
+</ContentPage>
